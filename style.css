@@ -21,7 +21,7 @@ body{
   animation-name: spin;
   animation-iteration-count: infinite;/*次数*/
   animation-timing-function: linear;/*动画节奏*/
-  box-shadow: 0px 0px 30px 0px grey;
+  box-shadow: 0px 0px 30px 0px white;
 }
 #yinyang::before{
   content: '';
