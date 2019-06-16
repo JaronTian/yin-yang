@@ -1,36 +1,52 @@
-#yin-yang {
-    width: 96px;
-    box-sizing: content-box;
-    height: 48px;
-    background: white;
-    border-color: black;
-    border-style: solid;
-    border-width: 2px 2px 50px 2px;
-    border-radius: 100%;
-    position: relative;
+@keyframes spin {
+  from {
+    transform: rotate(0deg); 
   }
-  #yin-yang:before {
-    content: "";
-    position: absolute;
-    top: 50%;
-    left: 0;
-    background: white;
-    border: 18px solid black;
-    border-radius: 100%;
-    width: 12px;
-    height: 12px;
-    box-sizing: content-box;
+
+  to {
+    transform: rotate(360deg);
   }
+}
+body{
+  background: #444;
+}
+#yinyang{
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  background: linear-gradient(to bottom, rgba(255,255,255,1) 1%,rgba(255,255,255,1) 50%,rgba(0,0,0,1) 50%,rgba(0,0,0,1) 100%);/*线性渐变，css3 linear gradient generator*/
+  position: relative;
+  margin: 100px auto 30px;
+  animation-duration: 3s;
+  animation-name: spin;
+  animation-iteration-count: infinite;/*次数*/
+  animation-timing-function: linear;/*动画节奏*/
+  box-shadow: 0px 0px 30px 0px grey;
+}
+#yinyang::before{
+  content: '';
+  width: 20px;
+  height: 20px;
+  border: 40px solid #000;
+  border-radius: 50%;
+  background: #fff;
+  position: absolute;
+  top: 50px;
+  left: 0;
   
-  #yin-yang:after {
-    content: "";
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    background: black;
-    border: 18px solid white;
-    border-radius: 100%;
-    width: 12px;
-    height: 12px;
-    box-sizing: content-box;
-  }
+}
+#yinyang::after{
+  content: '';
+  width: 20px;
+  height: 20px;
+  border: 40px solid #fff;
+  border-radius:50%;
+  background: #000;
+  position: absolute;
+  top: 50px;
+  right: 0;
+}
+p{
+  color: white;
+  text-align: center;
+}
